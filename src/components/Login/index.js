@@ -2,7 +2,7 @@ import './index.css'
 import {Component} from 'react'
 
 class Login extends Component {
-  state = {userName: '', password: '', errorMsg: ''}
+  state = {userName: '', password: '', errorMsg: '', showError: false}
 
   onSubmitSuccess = () => {
     const {history} = this.props
@@ -21,11 +21,11 @@ class Login extends Component {
 
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(response)
+
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
-      this.setState({errorMsg: data.error_msg})
+      this.setState({errorMsg: data.error_msg, showError: true})
     }
   }
 
@@ -38,7 +38,7 @@ class Login extends Component {
   }
 
   render() {
-    const {userName, password, errorMsg} = this.state
+    const {userName, password, errorMsg, showError} = this.state
 
     return (
       <div className="login-container">
@@ -76,7 +76,7 @@ class Login extends Component {
             <button type="submit" className="submit-button">
               Login
             </button>
-            <p className="error-msg"> {errorMsg} </p>
+            {showError && <p className="error-msg"> {errorMsg} </p>}
           </form>
         </div>
       </div>
