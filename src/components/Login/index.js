@@ -1,18 +1,20 @@
 import './index.css'
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 
 class Login extends Component {
-  state = {userName: '', password: '', errorMsg: '', showError: false}
+  state = {username: '', password: '', errorMsg: '', showError: false}
 
-  onSubmitSuccess = () => {
+  onSubmitSuccess = jwtToken => {
     const {history} = this.props
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
   }
 
   getDetails = async event => {
     event.preventDefault()
-    const {userName, password} = this.state
-    const userDetails = {userName, password}
+    const {username, password} = this.state
+    const userDetails = {username, password}
     const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
@@ -21,16 +23,17 @@ class Login extends Component {
 
     const response = await fetch(url, options)
     const data = await response.json()
+    console.log(data)
 
     if (response.ok === true) {
-      this.onSubmitSuccess()
+      this.onSubmitSuccess(data.jwt_token)
     } else {
       this.setState({errorMsg: data.error_msg, showError: true})
     }
   }
 
   changeUsername = event => {
-    this.setState({userName: event.target.value})
+    this.setState({username: event.target.value})
   }
 
   changePassword = event => {
@@ -38,7 +41,7 @@ class Login extends Component {
   }
 
   render() {
-    const {userName, password, errorMsg, showError} = this.state
+    const {username, password, errorMsg, showError} = this.state
 
     return (
       <div className="login-container">
@@ -60,7 +63,7 @@ class Login extends Component {
               id="username"
               className="input-box"
               onChange={this.changeUsername}
-              value={userName}
+              value={username}
             />
             <label htmlFor="password" className="label-text">
               PASSWORD

@@ -1,0 +1,66 @@
+.header-container {
+  background-color: #2c364c;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  align-items: center;
+}
+
+.app-logo {
+  height: 50px;
+  background-size: cover;
+}
+
+.app-items-lg {
+  display: flex;
+}
+
+.app-item-lg {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.log-out-btn {
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #4f46e5;
+  border-radius: 5px;
+  padding: 10px;
+  border-width: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .app-items-lg {
+    display: none;
+  }
+
+  .app-items-sm {
+    display: flex;
+    list-style-type: none;
+  }
+
+  .app-item-sm {
+    height: 50px;
+    background-size: cover;
+    margin-right: 15px;
+    color: #ffffff;
+  }
+
+  .app-logo {
+    height: 40px;
+    background-size: cover;
+  }
+
+  .logout {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-items-sm {
+    display: none;
+  }
+}
