@@ -25,19 +25,23 @@ const Header = props => {
       </Link>
 
       <div className="app-items-lg">
-        <link to="/">
-          <p className="app-item-lg">Home </p>
-        </link>
+        <Link className="app-item-lg" to="/">
+          Home
+        </Link>
 
-        <link>
-          <p className="app-item-lg"> Jobs </p>
-        </link>
+        <Link className="app-item-lg" to="/jobs">
+          Jobs
+        </Link>
       </div>
 
       <div className="app-items-sm">
-        <AiFillHome className="app-item-sm" />
-        <BsBriefcaseFill className="app-item-sm" />
-        <FiLogOut className="app-item-sm" />
+        <Link to="/">
+          <AiFillHome className="app-item-sm" />
+        </Link>
+        <Link to="/jobs">
+          <BsBriefcaseFill className="app-item-sm" />
+        </Link>
+        <FiLogOut className="app-item-sm" onClick={onLogout} />
       </div>
 
       <div className="logout">
