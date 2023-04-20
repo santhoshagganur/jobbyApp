@@ -1,4 +1,30 @@
 .jobs-bg-container {
   background-color: #000000;
+}
+
+.jobs-bottom-container {
   padding: 20px;
+  display: flex;
+}
+
+.horizontal-line {
+  background-color: #ffffff;
+  border-width: 1px solid;
+  width: 300px;
+}
+
+.user-decision-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.employment-types-heading {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.employment-decision-container {
+  list-style-type: none;
 }
