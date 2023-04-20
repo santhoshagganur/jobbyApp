@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import Header from '../Header'
 import './index.css'
 
@@ -16,13 +16,16 @@ const Home = () => {
       <div className="home-content">
         <h1 className="app-title"> Find The Job That Fits Your Life </h1>
         <p className="description">
-          Millions of people are searching jobs, salary information, company
+          Millions of people are searching for jobs, salary information, company
           reviews. <br />
           Find the job that fits your abilities and potential.
         </p>
-        <button type="button" className="find-jobs-btn">
-          Find Jobs
-        </button>
+
+        <Link to="/jobs">
+          <button type="button" className="find-jobs-btn">
+            Find Jobs
+          </button>
+        </Link>
       </div>
     </div>
   )

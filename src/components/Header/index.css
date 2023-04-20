@@ -13,6 +13,7 @@
 
 .app-items-lg {
   display: flex;
+  list-style-type: none;
 }
 
 .app-item-lg {
