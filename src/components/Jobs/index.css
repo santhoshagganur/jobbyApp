@@ -28,3 +28,37 @@
 .employment-decision-container {
   list-style-type: none;
 }
+
+.recommended-jobs-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.input-container {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  height: 40px;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.user-input {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 14px;
+}
+
+.search-icon {
+  height: 20px;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.jobs-display-section {
+  list-style-type: none;
+}
