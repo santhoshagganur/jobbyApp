@@ -35,6 +35,11 @@
   margin-left: 20px;
 }
 
+.search-button {
+  background-color: transparent;
+  border-width: 0;
+}
+
 .input-container {
   background-color: transparent;
   border: 1px solid #ffffff;

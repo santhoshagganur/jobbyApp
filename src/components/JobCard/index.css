@@ -3,10 +3,11 @@
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 20px;
+  width: 50vw;
 }
 
 .company-logo {
-  height: 50px;
+  height: 70px;
   background-size: cover;
   margin: 15px;
 }
@@ -19,4 +20,69 @@
   color: #ffffff;
   font-size: 25px;
   font-weight: 600;
+}
+
+.rating-container {
+  display: flex;
+}
+
+.rating-star {
+  color: #fbbf24;
+  font-size: 20px;
+  background-size: cover;
+  margin-right: 5px;
+}
+
+.rating {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.job-location-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  margin-right: 20px;
+}
+
+.location-img {
+  color: #ffffff;
+  font-size: 20px;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.job-content {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.job-location {
+  display: flex;
+}
+
+.salary {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.jobs-card-horizontal-line {
+  border: 1px solid #cbd5e1;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.job-description {
+  color: #ffffff;
+  font-size: 15px;
 }

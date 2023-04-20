@@ -2,6 +2,7 @@ import './index.css'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {BsSearch} from 'react-icons/bs'
+import {Redirect} from 'react-router-dom'
 import Header from '../Header'
 import UserProfile from '../UserProfile'
 import JobCard from '../JobCard'
@@ -44,6 +45,11 @@ class Jobs extends Component {
     const {employmentTypesList, salaryRangesList} = this.props
     const {recommendedJobs} = this.state
 
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken === undefined) {
+      return <Redirect to="/login" />
+    }
+
     return (
       <div className="jobs-bg-container">
         <Header />
@@ -68,7 +74,13 @@ class Jobs extends Component {
                 className="user-input"
                 placeholder="Search"
               />
-              <BsSearch className="search-icon" />
+              <button
+                type="button"
+                testid="searchButton"
+                className="search-button"
+              >
+                <BsSearch className="search-icon" />
+              </button>
             </div>
             <ul className="jobs-display-section">
               {recommendedJobs.map(each => (
