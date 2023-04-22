@@ -1,0 +1,12 @@
+.job-item-details-container {
+  background-color: #000000;
+}
+
+.job-details-bottom-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-item-details {
+  background-color: #2c364c;
+}

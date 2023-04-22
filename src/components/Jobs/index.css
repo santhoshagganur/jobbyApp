@@ -56,6 +56,7 @@
   background-color: transparent;
   border-width: 0;
   font-size: 14px;
+  color: #ffffff;
 }
 
 .search-icon {
@@ -66,4 +67,41 @@
 
 .jobs-display-section {
   list-style-type: none;
+}
+
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.failure-img {
+  height: 30vh;
+  background-size: cover;
+}
+
+.failure-content {
+  font-size: 30px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.failure-reason {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.retry-btn {
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #4f46e5;
+  border-width: 0;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.loader-container {
+  margin: 50px;
 }
