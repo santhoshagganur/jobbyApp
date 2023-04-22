@@ -9,7 +9,12 @@ import JobCard from '../JobCard'
 import EmploymentItem from '../EmploymentItem'
 
 class Jobs extends Component {
-  state = {recommendedJobs: []}
+  state = {
+    recommendedJobs: [],
+    employmentTypes: [],
+    searchInput: '',
+    salaryRange: 0,
+  }
 
   componentDidMount() {
     this.getJobs()
@@ -58,14 +63,10 @@ class Jobs extends Component {
             <UserProfile />
             <hr className="horizontal-line" />
             <h1 className="employment-types-heading"> Type of Employment </h1>
-            <ul className="employment-decision-container">
-              {employmentTypesList.map(each => (
-                <EmploymentItem
-                  employmentDetails={each}
-                  key={each.employmentTypeId}
-                />
-              ))}
-            </ul>
+            <EmploymentItem
+              employmentTypesList={employmentTypesList}
+              salaryRangesList={salaryRangesList}
+            />
           </div>
           <div className="recommended-jobs-container">
             <div className="input-container">

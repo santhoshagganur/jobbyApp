@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Home from './components/Home'
 import Jobs from './components/Jobs'
 import NotFound from './components/NotFound'
+import EmploymentItem from './components/EmploymentItem'
 
 // These are the lists used in the application. You can move them to any component needed.
 const employmentTypesList = [

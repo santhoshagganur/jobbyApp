@@ -1,16 +1,81 @@
 import './index.css'
 
 const EmploymentItem = props => {
-  const {employmentDetails} = props
-  const {label, employmentTypeId} = employmentDetails
+  const getEmploymentTypeList = () => {
+    const {employmentTypesList} = props
+
+    return employmentTypesList.map(employ => {
+      const {changeEmploymentType} = props
+      const onChangeEmployType = event =>
+        changeEmploymentType(event.target.value)
+
+      return (
+        <li
+          className="checkbox-list-items"
+          key={employ.employmentTypeId}
+          onChange={onChangeEmployType}
+        >
+          <input
+            type="checkbox"
+            className="check-radio"
+            id={employ.employmentTypeId}
+            value={employ.employmentTypeId}
+          />
+          <label htmlFor={employ.employmentTypeId} className="check-label">
+            {employ.label}
+          </label>
+        </li>
+      )
+    })
+  }
+
+  const renderEmploymentType = () => (
+    <div className="salary-container">
+      <h1 className="salary-heading">Type of Employment</h1>
+      <ul className="salary-range-container">{getEmploymentTypeList()}</ul>
+    </div>
+  )
+
+  const getSalaryRangeList = () => {
+    const {salaryRangesList} = props
+
+    return salaryRangesList.map(salary => {
+      const {changeSalaryRange} = props
+      const onChangeSalary = () => changeSalaryRange(salary.salaryRangeId)
+
+      return (
+        <li
+          className="checkbox-list-items"
+          key={salary.salaryRangeId}
+          onChange={onChangeSalary}
+        >
+          <input
+            type="radio"
+            className="check-radio"
+            id={salary.salaryRangeId}
+            name="salary"
+          />
+          <label htmlFor={salary.salaryRangeId} className="check-label">
+            {salary.label}
+          </label>
+        </li>
+      )
+    })
+  }
+
+  const renderSalaryRange = () => (
+    <div className="salary-container">
+      <h1 className="salary-heading">Salary Range</h1>
+      <ul className="salary-range-container">{getSalaryRangeList()}</ul>
+    </div>
+  )
 
   return (
-    <li className="employment-details">
-      <input type="checkbox" className="input-checkbox" id={employmentTypeId} />
-      <label className="label-element" htmlFor={employmentTypeId}>
-        {label}
-      </label>
-    </li>
+    <div className="job-filter-group">
+      {renderEmploymentType()}
+      <hr className="horizontal-line" />
+      {renderSalaryRange()}
+    </div>
   )
 }
 
