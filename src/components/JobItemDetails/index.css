@@ -1,5 +1,6 @@
 .job-item-details-container {
   background-color: #000000;
+  height: 100vh;
 }
 
 .job-details-bottom-container {
@@ -104,9 +105,49 @@
 .description {
   font-size: 20px;
   font-weight: 500;
+  color: #ffffff;
 }
 
 .job-description {
   color: #ffffff;
   font-size: 15px;
+}
+
+.skills-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-card {
+  display: flex;
+}
+
+.skill-name {
+  color: #64748b;
+  font-size: 20px;
+}
+
+.skill-img {
+  height: 50px;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.company-img {
+  height: 200px;
+  background-size: cover;
+}
+
+.similar-jobs-container {
+  display: flex;
+  list-style-type: none;
+}
+
+.similar-job-container {
+  background-color: #2c364c;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }

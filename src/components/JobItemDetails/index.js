@@ -131,6 +131,64 @@ class JobItemDetails extends Component {
           <hr className="jobs-card-horizontal-line" />
           <h1 className="description"> Description </h1>
           <p className="job-description"> {jobDescription} </p>
+          <h1 className="description"> Skills </h1>
+          <ul className="skills-container">
+            {companyData.skills.map(each => (
+              <li className="skill-card">
+                <img src={each.imageUrl} alt="skill" className="skill-img" />
+                <p className="skill-name"> {each.name} </p>
+              </li>
+            ))}
+          </ul>
+
+          <h1 className="description"> Life at Company </h1>
+          <div className="skill-card">
+            <p className="job-description">
+              {companyData.lifeAtCompany.description}
+            </p>
+            <img
+              src={companyData.lifeAtCompany.imageUrl}
+              alt="company"
+              className="company-img"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h1 className="description"> Similar Jobs </h1>
+          <ul className="similar-jobs-container">
+            {similarJobs.map(each => (
+              <li className="similar-job-container">
+                <div className="company-information">
+                  <img
+                    src={each.companyLogoUrl}
+                    alt="job details company logo"
+                    className="job-details-company-logo"
+                  />
+                  <div>
+                    <h1 className="job-title"> {each.title} </h1>
+                    <div className="company-information">
+                      <AiFillStar className="star-icon" />
+                      <p className="rating"> {each.rating} </p>
+                    </div>
+                  </div>
+                </div>
+
+                <h1 className="description"> Description </h1>
+                <p className="job-description"> {} </p>
+                <div className="job-location-details">
+                  <div className="location">
+                    <GoLocation className="location-img" />
+                    <p className="job-content"> {each.location} </p>
+                  </div>
+                  <div className="location">
+                    <BsBriefcaseFill className="location-img" />
+                    <p className="job-content"> {each.employmentType} </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     )
