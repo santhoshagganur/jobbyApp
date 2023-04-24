@@ -53,10 +53,10 @@ class JobItemDetails extends Component {
     const jwtToken = Cookies.get('jwt_token')
     const url = `https://apis.ccbp.in/jobs/${id}`
     const options = {
-      method: 'GET',
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
+      method: 'GET',
     }
 
     const response = await fetch(url, options)
@@ -154,7 +154,7 @@ class JobItemDetails extends Component {
   )
 
   renderLoader = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
