@@ -16,6 +16,10 @@
   display: flex;
 }
 
+.link-item {
+  text-decoration: none;
+}
+
 .job-title {
   color: #ffffff;
   font-size: 25px;
