@@ -201,7 +201,11 @@ class Jobs extends Component {
                 placeholder="Search"
                 onChange={this.changeSearchResults}
               />
-              <button type="button" className="search-button">
+              <button
+                type="button"
+                className="search-button"
+                data-testid="searchButton"
+              >
                 <BsSearch className="search-icon" />
               </button>
             </div>

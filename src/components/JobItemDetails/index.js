@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import './index.css'
+import {Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import {AiFillStar} from 'react-icons/ai'
 import {GoLocation} from 'react-icons/go'
@@ -93,6 +94,7 @@ class JobItemDetails extends Component {
       packagePerAnnum,
       title,
       employmentType,
+      companyWebsiteUrl,
     } = companyData
 
     return (
@@ -129,7 +131,12 @@ class JobItemDetails extends Component {
           </div>
 
           <hr className="jobs-card-horizontal-line" />
-          <h1 className="description"> Description </h1>
+          <div className="job-website-company">
+            <h1 className="description"> Description </h1>
+            <a href={companyWebsiteUrl} className="visit-website">
+              Visit
+            </a>
+          </div>
           <p className="job-description"> {jobDescription} </p>
           <h1 className="description"> Skills </h1>
           <ul className="skills-container">
@@ -162,7 +169,7 @@ class JobItemDetails extends Component {
                 <div className="company-information">
                   <img
                     src={each.companyLogoUrl}
-                    alt="job details company logo"
+                    alt="similar job company logo"
                     className="job-details-company-logo"
                   />
                   <div>
@@ -175,7 +182,7 @@ class JobItemDetails extends Component {
                 </div>
 
                 <h1 className="description"> Description </h1>
-                <p className="job-description"> {} </p>
+                <p className="job-description"> {each.jobDescription} </p>
                 <div className="job-location-details">
                   <div className="location">
                     <GoLocation className="location-img" />
@@ -205,13 +212,13 @@ class JobItemDetails extends Component {
       <p className="failure-reason">
         We cannot seem to find the page you are looking for.
       </p>
-      <button type="button" className="retry-btn" onClick={this.getJobs}>
+      <button type="button" className="retry-btn" onClick={this.getJobItem}>
         Retry
       </button>
     </div>
   )
 
-  renderLoader = () => (
+  renderLoaderView = () => (
     <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
@@ -232,6 +239,12 @@ class JobItemDetails extends Component {
   }
 
   render() {
+    const jwtToken = Cookies.get('jwt_token')
+
+    if (jwtToken === undefined) {
+      return <Redirect to="/login" />
+    }
+
     return (
       <div className="job-item-details-container">
         <Header />
