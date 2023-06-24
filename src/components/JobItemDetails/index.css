@@ -14,7 +14,7 @@
   padding: 25px;
 }
 
-.job-title {
+.job-details-title {
   color: #ffffff;
   font-size: 30px;
   font-weight: 500;
@@ -132,6 +132,11 @@
   align-items: center;
 }
 
+.life-at-company {
+  display: flex;
+  align-items: center;
+}
+
 .skill-name {
   color: #ffffff;
   font-size: 20px;
@@ -171,4 +176,56 @@
   color: #6366f1;
   font-size: 30px;
   font-weight: 500;
+}
+
+.job-title {
+  font-size: 20px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .job-details-company-logo {
+    height: 50px;
+    background-size: cover;
+  }
+
+  .job-details-title {
+    font-size: 20px;
+  }
+
+  .life-at-company {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description {
+    font-size: 25px;
+  }
+
+  .visit-website {
+    font-size: 20px;
+  }
+
+  .job-description {
+    font-size: 16px;
+  }
+
+  .skill-img {
+    height: 30px;
+    background-size: cover;
+  }
+
+  .skill-name {
+    font-size: 15px;
+  }
+
+  .skills-container {
+    justify-content: space-between;
+  }
+
+  .similar-jobs-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

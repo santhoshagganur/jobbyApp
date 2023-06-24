@@ -115,10 +115,15 @@
     display: flex;
     flex-direction: column;
     order: 1;
+    padding: 10px;
   }
 
   .jobs-user-input {
     width: 50px;
     order: 0;
+  }
+
+  .recommended-jobs-container {
+    margin-left: 5px;
   }
 }

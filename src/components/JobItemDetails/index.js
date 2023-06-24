@@ -86,6 +86,7 @@ class JobItemDetails extends Component {
 
   renderSuccessView = () => {
     const {companyData, similarJobs} = this.state
+    console.log(companyData)
     const {
       companyLogoUrl,
       location,
@@ -107,7 +108,7 @@ class JobItemDetails extends Component {
               className="job-details-company-logo"
             />
             <div>
-              <h1 className="job-title"> {title} </h1>
+              <h1 className="job-details-title"> {title} </h1>
               <div className="company-information">
                 <AiFillStar className="star-icon" />
                 <p className="rating"> {rating} </p>
@@ -149,7 +150,7 @@ class JobItemDetails extends Component {
           </ul>
 
           <h1 className="description"> Life at Company </h1>
-          <div className="skill-card">
+          <div className="life-at-company">
             <p className="job-description">
               {companyData.lifeAtCompany.description}
             </p>
