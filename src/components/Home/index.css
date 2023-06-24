@@ -25,17 +25,17 @@
   font-weight: bold;
 }
 
-.description {
+.home-description {
   color: #ffffff;
   font-size: 25px;
 }
 
 @media screen and (max-width: 767px) {
   .app-title {
-    font-size: 35px;
+    font-size: 30px;
   }
 
-  .description {
+  .home-description {
     font-size: 18px;
   }
 }

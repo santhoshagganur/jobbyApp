@@ -197,7 +197,7 @@ class Jobs extends Component {
             <div className="input-container">
               <input
                 type="search"
-                className="user-input"
+                className="jobs-user-input"
                 placeholder="Search"
                 onChange={this.changeSearchResults}
               />

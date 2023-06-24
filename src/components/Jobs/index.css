@@ -52,7 +52,7 @@
   margin: 20px;
 }
 
-.user-input {
+.jobs-user-input {
   background-color: transparent;
   border-width: 0;
   font-size: 14px;
@@ -104,4 +104,21 @@
 
 .loader-container {
   margin: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .jobs-bg-container {
+    width: 100vw;
+  }
+
+  .jobs-bottom-container {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+  }
+
+  .jobs-user-input {
+    width: 50px;
+    order: 0;
+  }
 }
